@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:        #07130F;
+  --surface:   #0D1F19;
+  --card:      #10241D;
+  --border:    #1E3A34;
+  --primary:   #2ECC71;
+  --hover:     #39FFB6;
+  --secondary: #00C9A7;
+  --cyan:      #00D1FF;
+  --text:      #EAEAEA;
+  --muted:     #A7B3AF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism card */
+.glass {
+  background: rgba(16, 36, 29, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+
+/* Glow button */
+.btn-primary {
+  background: #2ECC71;
+  color: #07130F;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 20px rgba(46,204,113,0.35);
+}
+.btn-primary:hover {
+  background: #39FFB6;
+  box-shadow: 0 0 30px rgba(57,255,182,0.55);
+  transform: translateY(-1px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--surface); }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* EDD tier colors */
+.tier-green  { color: #2ECC71; }
+.tier-yellow { color: #F1C40F; }
+.tier-orange { color: #FF9F43; }
+.tier-red    { color: #E74C3C; }
+
+/* Animated grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(46,204,113,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46,204,113,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Leaflet map dark override */
+.leaflet-container { background: #07130F !important; }
+.leaflet-tile      { filter: brightness(0.7) saturate(0.5) hue-rotate(100deg); }
